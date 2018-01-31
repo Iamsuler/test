@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>baiduvoice</title>
+    <style>
+        body {
+            background-color: #f00;
+        }
+        #baidu {
+            width: 100%;
+            height: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<button id="baidu">baiduvoice</button>
+    <script>
+        document.getElementById('baidu').addEventListener('click', function(){
+            var audioel = document.createElement('audio');
+            audioel.src = 'https://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=3&text=' + encodeURI('哈哈哈哈哈哈');
+            document.body.append(audioel);
+            audioel.play();
+            audioel.oncanplay = function(){
+                alert('canplay');
+            }
+            // $(audio).load().paly();
+            // document.getElementById('audioplayer').play();
+        }, false);
+    </script>
+</body>
+</html>

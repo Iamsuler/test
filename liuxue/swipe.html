@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>swipe</title>
+    <script src="https://i1.m.liuxue86.com/js/zepto.min.js"></script>
+    <style>
+        #swipe {
+            height: 200px;
+            background-color: #f00;
+        }
+
+        body {
+            height: 1000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="swipe">
+        <a href="https://m.liuxue86.com/">出国留邪王</a>
+    </div>
+    <script>
+        $('#swipe').swipeLeft(function(event){
+            event.stopPropagation();
+            alert('container is swipeleft');
+        });
+        $('#swipe').swipeRight(function(){
+            event.stopPropagation();
+            alert('container is swiperight');
+        });
+        // $('body').swipeUp(function(){
+        //     alert('body is swipeUp');
+        // });
+        // $('body').bind("touchmove", function(e) { e.preventDefault();});
+        // if ($.os.android) {
+            // var startPos = {
+            //     x: 0,
+            //     y: 0,
+            //     time: +new Date
+            // };
+            // var isScrolling = 0; // 记录是垂直滚动还是水平滚动 
+            // document.getElementById('swipe').addEventListener('touchstart',
+            //     function (event) {
+            //         var touch = event.targetTouches[0]; //touches数组对象获得屏幕上所有的touch，取第一个touch 
+            //         startPos.x = touch.pageX;
+            //         startPos.y = touch.pageY;
+            //     }, false);
+            // document.getElementById('swipe').addEventListener('touchend', function (event) {
+            //     console.log(event);
+            //     if (event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
+            //     var touchmove = event.targetTouches[0];
+            //     console.log(event.targetTouches)
+            //     var endPos = {
+            //         x: touchmove.pageX - startPos.x,
+            //         y: touchmove.pageY -
+            //             startPos.y
+            //     };
+            //     isScrolling = Math.abs(endPos.x) < Math.abs(endPos.y) ? 1 : 0; //isScrolling为1时，表示纵向滑动，0为横向滑动 
+            //     if(isScrolling=== 0)
+            //     {   
+            //         console.log(event);
+            //         event.preventDefault();
+            //     }
+            // }, false);
+        // }
+    </script>
+</body>
+
+</html>
