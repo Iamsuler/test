@@ -1,0 +1,286 @@
+//图标icon-head
+.icon-head11 {
+  background-position: 0 0;
+}
+.icon-head13 {
+  background-position: -3.125rem 0;
+}
+.icon-head23 {
+  background-position: -3.125rem -1.5625rem;
+}
+.icon-head33 {
+  background-position: -3.125rem -3.125rem;
+}
+.icon-head43 {
+  background-position: -3.125rem -4.6875rem;
+}
+.icon-head31 {
+  background-position: 0 -3.125rem;
+}
+//article
+#article {
+  background-color: #fff;
+  margin-bottom: 7px;
+  padding: 1px 0 11px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.article-title {
+  margin: 0 14px;
+
+  h1 {
+    font-size: 1.5rem;
+    margin: .625rem 0 .1875rem;
+  }
+
+  .title-bottom {
+    height: .875rem;
+    font-size: .75rem;
+    color: #999;
+    overflow: hidden;
+    margin-bottom: 1rem;
+
+    a {
+      margin: 0 5px;
+      color: #999;
+    }
+  }
+}
+
+.article-content {
+  margin: 0 14px;
+  color: #000;
+  overflow: hidden;
+
+  h2 {
+    font-size: 1.125rem;
+    color: #333;
+    margin: 0 0 1rem;
+  }
+
+  p {
+    font-size: 1.0625rem;
+    margin: 0 0 1rem;
+  }
+
+  img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+//content-mask
+.mask-box {
+
+  .content-mask {
+    position: absolute;
+    left: 0;
+    bottom: 55px;
+    width: 100%;
+    height: 70px;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(255,255,255,0)),to(#FFF));
+    background-image: linear-gradient(-180deg,rgba(255,255,255,0) 0,#FFF 100%);
+  }
+
+  .content-more {
+    height: 55px;
+    line-height: 55px;
+    font-size: .875rem;
+    text-align: center;
+    color: #448AFF;
+
+    .icon-head33 {
+      position: relative;
+      top: 6px;
+      left: -5px;
+      display: inline-block;
+      width: 1.25rem;
+      height: 1.25rem;
+      background-position: -1.5625rem -3.125rem;
+    }
+  }
+}
+
+.wechat-box {
+  padding: 0 14px 4px;
+  text-align: center;
+
+  >div {
+    margin: 10px 0;
+  }
+
+  .wechat-intro {
+    position: relative;
+    font-weight: 700;
+    background-color: #fafafa;
+    background-size: 100% 100%;
+    padding: 10px 35px;
+    text-align: left;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 5px;
+      right: 10px;
+      width: 16px;
+      height: 13px;
+      background: url(https://i1.m.liuxue86.com/images/dobble_quota.png) 0 -20px no-repeat;
+    }
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 5px;
+      left: 10px;
+      width: 16px;
+      height: 13px;
+      background: url(https://i1.m.liuxue86.com/images/dobble_quota.png) no-repeat;
+    }
+  }
+
+  .wechat-lead {
+    height: 21px;
+    line-height: 21px;
+
+    >span {
+      color: #f00;
+    }
+  }
+
+  .wechat-name{
+    font-size: 30px;
+    color: #f00;
+  }
+
+  .wechat-btn {
+    .fb {
+      position: relative;
+      top: -2px;
+      left: 0;
+    }
+  }
+}
+
+.tag-rel-list {
+  margin-bottom: 14px;
+
+  a {
+    display: block;
+    height: 30px;
+    line-height: 28px;
+    padding: 0 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0 15px 0 0;
+  }
+}
+
+//问答
+.wap-ask {
+  .btn {
+    height: 25px;
+    line-height: 25px;
+    padding: 0 5px;
+    margin: 2.5px 0;
+  }
+}
+
+//分享
+
+.jctw-box {
+  padding-bottom: 10px;
+}
+.jctw-content {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0 7px;
+
+  dl {
+    width: 47%;
+    margin: 3px 1px 1px 9px;
+    
+    dt {
+      height: 7.5rem;
+    }
+
+    dd {
+      width: 100%;
+      margin: 0;
+      color: #000;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}
+//重置熊账号样式
+#cambrian0 {
+  >div.PypvUY {
+    margin: 7px 0 0;
+    &:after {
+      border-left: none;
+      border-right: none;
+    }
+  }
+
+}
+//广告
+.gg {
+  display: none;
+}
+.show-pagedown{
+  padding: 0 11px;
+}
+.show-banner1 {
+  padding: 7px 5px 0;
+  background-color: #fff;
+}
+
+//soshm 
+#soshm-box {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin: 20px auto 15px;
+
+  >.soshm-item {
+    width: 80px;
+
+    >.soshm-item-icon {
+      width: 25px;
+      height: 25px;
+      padding: 10px;
+      margin: 0 auto 5px;
+    }
+
+    >.soshm-item-text {
+      display: none;
+      font-size: 12px;
+      color: #999;
+    }
+  }
+}
+
+.soshm-box{
+  margin-top: 21px;
+  .soshm-title {
+    position: relative;
+    border-bottom: 1px solid #eee;
+    margin:  0 14px;
+
+    >span {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      width: 50px;
+      height: 30px;
+      margin-left: -25px;
+      line-height: 30px;
+      color: #999;
+      font-size: 14px;
+      text-align: center;
+      background-color: #fff;
+    }
+  }
+}

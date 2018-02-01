@@ -1,0 +1,5 @@
+@import "~normalize-scss";
+
+@include normalize();
+@import "mobile/common";
+@import "mobile/list";

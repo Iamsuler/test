@@ -1,0 +1,26 @@
+{
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.9.1",
+    "axios": "^0.17.1",
+    "bable-loader": "^0.0.1-security",
+    "bootswatch": "^3.3.7",
+    "copy-webpack-plugin": "^4.3.1",
+    "css-loader": "^0.28.9",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "imports-loader": "^0.7.1",
+    "node-sass": "^4.5.3",
+    "normalize-scss": "^7.0.0",
+    "postcss-loader": "^2.0.10",
+    "sass-loader": "^6.0.5",
+    "uglifyjs-webpack-plugin": "^1.1.5",
+    "vanilla-lazyload": "^8.6.0",
+    "zepto-webpack": "^1.2.0"
+  },
+  "scripts": {
+    "dev-server": "./node_modules/.bin/encore dev-server",
+    "dev": "./node_modules/.bin/encore dev",
+    "watch": "./node_modules/.bin/encore dev --watch",
+    "build": "./node_modules/.bin/encore production",
+    "start": "webpack --config webpack.config.js"
+  }
+}
