@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const extractTextPlugin = require('extract-text-webpack-plugin');
-var packCSS = new extractTextPlugin('./css/[name].css');
+const uglify = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -9,7 +9,7 @@ module.exports = {
         'js/app': path.resolve(__dirname, 'assets/js/app.js'),
         'js/mobile': path.resolve(__dirname, 'assets/js/mobile.js'),
         'js/mobile-list': path.resolve(__dirname, 'assets/js/mobile-list.js'),
-        'js/mobile-k': path.resolve(__dirname, 'assets/js/mobile-k.js'),
+        'js/mobile-k': path.resolve(__dirname, 'assets/js/mobile-k.js')
     },
     output: {
         path: path.resolve(__dirname, 'public/build'),
@@ -27,50 +27,40 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 1
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            plugins: (loader) => {
-                                require('autoprefixer')({
-                                    browsers: ['last 5 versions']
-                                })
-                            }
-                        }
-                    }
-                ]
-            }, {
+                use: extractTextPlugin.extract(['css-loader', 'postcss-loader'])
+            }, 
+            {
                 test: /\.scss$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
+                use: extractTextPlugin.extract({
+                    use: [{
+                        loader:'css-loader',
                         options: {
-                            importLoaders: 1
+                            minimize: true
                         }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            plugins: (loader) => {
-                                require('autoprefixer')({
-                                    browsers: ['last 5 versions']
-                                })
-                            }
-                        }
-                    }
-                ]
+                    }, {
+                        loader: 'sass-loader'
+                    }],
+                    fallback: 'style-loader'
+                })
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [{
+                    loader: 'url-loader'
+                }]
             }
         ]
     },
     plugins: [
-        packCSS
+        new extractTextPlugin({
+            filename: (getPath) => {
+                return getPath('css/[name].css').replace('css/js', 'css');
+            },
+            allChunks: true
+        }),
+        // new uglify(),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'js/vendor'
+        })
     ]
 }

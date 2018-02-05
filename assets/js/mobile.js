@@ -2,6 +2,7 @@ import $ from 'zepto-webpack'
 import util from './lib/util'
 import soshm from './lib/soshm'
 require('./wap/output-show')
+require('../scss/mobile.scss')
 
 window.$ = $;
 
