@@ -4,63 +4,63 @@ const extractTextPlugin = require('extract-text-webpack-plugin');
 const uglify = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-    entry: {
-        'js/vendor': ['zepto-webpack', 'axios', 'vanilla-lazyload'],
-        'js/app': path.resolve(__dirname, 'assets/js/app.js'),
-        'js/mobile': path.resolve(__dirname, 'assets/js/mobile.js'),
-        'js/mobile-list': path.resolve(__dirname, 'assets/js/mobile-list.js'),
-        'js/mobile-k': path.resolve(__dirname, 'assets/js/mobile-k.js')
-    },
-    output: {
-        path: path.resolve(__dirname, 'public/build'),
-        filename: '[name].js'
-    },
-    module: {
-        rules: [{
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: path.resolve(__dirname, 'node_modules'),
-                include: path.resolve(__dirname, 'src'),
-                query: {
-                    presets: ['env']
-                }
-            },
-            {
-                test: /\.css$/,
-                use: extractTextPlugin.extract(['css-loader', 'postcss-loader'])
-            }, 
-            {
-                test: /\.scss$/,
-                use: extractTextPlugin.extract({
-                    use: [{
-                        loader:'css-loader',
-                        options: {
-                            minimize: true
-                        }
-                    }, {
-                        loader: 'sass-loader'
-                    }],
-                    fallback: 'style-loader'
-                })
-            },
-            {
-                test: /\.(png|jpg|gif)$/,
-                use: [{
-                    loader: 'url-loader'
-                }]
-            }
-        ]
-    },
-    plugins: [
-        new extractTextPlugin({
-            filename: (getPath) => {
-                return getPath('css/[name].css').replace('css/js', 'css');
-            },
-            allChunks: true
-        }),
-        // new uglify(),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'js/vendor'
-        })
-    ]
+  entry: {
+    'js/vendor': ['zepto-webpack', 'axios', 'vanilla-lazyload'],
+    'js/app': path.resolve(__dirname, 'assets/js/app.js'),
+    'js/mobile': path.resolve(__dirname, 'assets/js/mobile.js'),
+    'js/mobile-list': path.resolve(__dirname, 'assets/js/mobile-list.js'),
+    'js/mobile-k': path.resolve(__dirname, 'assets/js/mobile-k.js')
+  },
+  output: {
+    path: path.resolve(__dirname, 'public/build'),
+    filename: '[name].js'
+  },
+  module: {
+    rules: [{
+      test: /\.js$/,
+      loader: 'babel-loader',
+      exclude: path.resolve(__dirname, 'node_modules'),
+      include: path.resolve(__dirname, 'src'),
+      query: {
+        presets: ['env']
+      }
+    }, {
+      test: /\.css$/,
+      use: extractTextPlugin.extract(['css-loader', 'postcss-loader'])
+    }, {
+      test: /\.scss$/,
+      use: extractTextPlugin.extract({
+        use: [{
+          loader: 'css-loader'
+          // options: {
+          //   minimize: true
+          // }
+        }, {
+          loader: 'sass-loader'
+        }],
+        fallback: 'style-loader'
+      })
+    }, {
+      test: /\.(png|jpg)$/,
+      use: [{
+        loader: 'url-loader',
+        options: {
+          limit: 1,
+          name: '[path][name].[hash:8].[ext]'
+        }
+      }]
+    }]
+  },
+  plugins: [
+    new extractTextPlugin({
+      filename: (getPath) => {
+        return getPath('css/[name].css').replace('css/js', 'css');
+      },
+      allChunks: true
+    }),
+    // new uglify(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'js/vendor'
+    })
+  ]
 }
