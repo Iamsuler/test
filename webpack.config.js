@@ -41,12 +41,12 @@ module.exports = {
         fallback: 'style-loader'
       })
     }, {
-      test: /\.(png|jpg)$/,
+      test: /\.(png|jpg|gif|svg)$/i,
       use: [{
         loader: 'url-loader',
         options: {
-          limit: 1,
-          name: '[path][name].[hash:8].[ext]'
+          limit: 10000,
+          name: 'images/[name].[ext]'
         }
       }]
     }]
@@ -60,7 +60,7 @@ module.exports = {
     }),
     // new uglify(),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'js/vendor'
+      name: ['js/vendor', 'manifest']
     })
   ]
 }

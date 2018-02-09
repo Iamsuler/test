@@ -1,4 +1,4 @@
-webpackJsonp([3],{
+webpackJsonp([4],{
 
 /***/ 17:
 /***/ (function(module, exports) {
@@ -8,6 +8,13 @@ webpackJsonp([3],{
 /***/ }),
 
 /***/ 19:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "images/icon-soshm.png";
+
+/***/ }),
+
+/***/ 20:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17,6 +24,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 
 
+__webpack_require__(19);
 __webpack_require__(17);
 
 __WEBPACK_IMPORTED_MODULE_0__lib_util__["a" /* default */].log();
@@ -24,4 +32,4 @@ __WEBPACK_IMPORTED_MODULE_0__lib_util__["a" /* default */].log();
 
 /***/ })
 
-},[19]);
+},[20]);
