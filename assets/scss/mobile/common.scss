@@ -25,6 +25,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   color: #333;
+  background: url("/assets/img/wechat.png") no-repeat;
 }
 
 a {
@@ -697,7 +698,7 @@ a {
 
 //side-share
 .icon-head {
-  background: url(/assets/img/icon-head.png) no-repeat;
+  background: url("/assets/img/icon-head.png") no-repeat;
   background-size: 4.6875rem 6.25rem;
 }
 .icon-head21 {

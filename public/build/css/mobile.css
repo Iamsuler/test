@@ -426,7 +426,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  color: #333; }
+  color: #333;
+  background: url("/assets/img/wechat.png") no-repeat; }
 
 a {
   color: #333;
@@ -897,7 +898,7 @@ a {
       color: #f00; }
 
 .icon-head {
-  background: url(/assets/img/icon-head.png) no-repeat;
+  background: url("/assets/img/icon-head.png") no-repeat;
   background-size: 4.6875rem 6.25rem; }
 
 .icon-head21 {
