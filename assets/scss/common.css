@@ -1,9 +1,9 @@
 body{
     margin: 0;
     padding: 0;
-    background: url("/assets/img/icon-discuss.png");
+    background: url("../img/icon-discuss.png");
 }
 .flex{
     display: flex;
-    background: url("/assets/img/wechat.png");
+    background: url("../img/wechat.png");
 }

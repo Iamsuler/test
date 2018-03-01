@@ -10,7 +10,7 @@ webpackJsonp([4],{
 /***/ 19:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "/images/icon-soshm.png";
+module.exports = __webpack_require__.p + "images/icon-soshm.png";
 
 /***/ }),
 
